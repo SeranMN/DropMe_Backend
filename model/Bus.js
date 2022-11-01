@@ -5,6 +5,7 @@ const busSchema = new mongoose.Schema({
     BusName: { type: String, required: true },
     Model: { type: String, required: true },
     Capacity: { type: String, required: true },
-    Status: { type: String, required: true }
+    Status: { type: String, required: true },
+    Price:{type:String,required:true}
 });
 module.exports = mongoose.model("Bus",busSchema);

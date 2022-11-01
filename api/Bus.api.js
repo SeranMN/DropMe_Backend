@@ -6,5 +6,6 @@ module.exports = () =>
 {
     router.post("/add", BusController.addBus);
     router.get('/', BusController.getAllBuses);
+    router.get('/:id',BusController.getAllBusesByNumber)
     return router
 }
