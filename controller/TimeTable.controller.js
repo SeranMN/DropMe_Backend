@@ -14,8 +14,14 @@ const viewTimeTable = async (req, res) => {
         .then((data) => { res.status(200).send(data) })
         .catch((err) => { res.status(500).send(err) });
 }
+const getTimeTableByRoute = (req, res) => {
+    TimeTable.find({ routeNo: req.params.id })
+        .then((data) => { res.status(200).send(data) })
+        .catch((err) => { res.status(500).send(err) });
+}
 
 module.exports = {
     addTimeTable,
-    viewTimeTable
+    viewTimeTable,
+    getTimeTableByRoute
 }
