@@ -9,5 +9,8 @@ module.exports = () =>
     router.get('/:id', BusController.getAllBusesByNumber);
     router.put('/balance/:id', BusController.balanceUpdate)
     router.get('/getbalance/:id',BusController.balance)
+    router.get('/:id',BusController.getAllBusesByNumber)
+    router.put('/edit/:id',BusController.editBus)
+    router.delete('/delete/:id',BusController.deleteBus)
     return router
 }
