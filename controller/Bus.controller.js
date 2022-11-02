@@ -24,8 +24,28 @@ const getAllBusesByNumber = async (req, res) => {
         .catch((err) => { res.status(500).send(err) });
 }
 
+const balanceUpdate = async (req, res) => {
+    await User.findOneAndUpdate({ BusNo: req.params.id }, req.body)
+        .then((data) => {
+            res.send(data).status(200)
+        })
+    .catch((err)=>res.send(err).status(500))
+}
+const balance = async (req, res) => {
+    await User.findOne({ BusNo: req.params.id })
+        .then((data) => {
+            res.send(data.Balance).status(200)
+        })
+    .catch((err)=>res.send(err).status(500))
+}
+
+
 module.exports = {
     addBus,
     getAllBuses,
-getAllBusesByNumber
+    getAllBusesByNumber,
+    balanceUpdate,
+    balance
+    
+
 }
