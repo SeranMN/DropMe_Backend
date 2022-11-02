@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/config");
 const Bus = require('./api/Bus.api')
 const Login = require('./api/Login.api')
-const Route = require('./api/Route.api')
 const TimeTable = require('./api/TimeTable.api');
 const User = require('./api/User.api')
 const Trip = require('./api/Trip.api')
