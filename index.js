@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/config");
 const Bus = require('./api/Bus.api')
 const Login = require('./api/Login.api')
+const Route = require('./api/Route.api')
 const TimeTable = require('./api/TimeTable.api');
 const User = require('./api/User.api')
 const Trip = require('./api/Trip.api')
@@ -19,6 +20,7 @@ app.use('/login', Login());
 app.use('/timetable',TimeTable())
 app.use('/user', User())
 app.use('/trip',Trip())
+app.use('/route',Route())
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
