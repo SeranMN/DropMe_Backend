@@ -36,11 +36,17 @@ const deleteRoute = async (req, res) => {
         .catch((err) => { res.status(500).send(err) })
 }
 
+const search = async (req,res) => {
+    await Route.find({ 'routeNo': { $regex: '.*' + req.params.id + '.*' } }).then((data) => { res.status(200).send(data) })
+    .catch((err) => { res.status(500).send(err) })
+}
+
 
 module.exports = {
     addRoute,
     getAllRoutes,
     editRoute,
-    deleteRoute
+    deleteRoute,
+    search
 
 }

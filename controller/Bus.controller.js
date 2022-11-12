@@ -56,6 +56,11 @@ const deleteBus = async (req, res) => {
         .catch((err) => { res.status(500).send(err) })
 }
 
+const search = async (req,res) => {
+    await User.find({ 'BusName': { $regex: '.*' + req.params.id + '.*' } }).then((data) => { res.status(200).send(data) })
+    .catch((err) => { res.status(500).send(err) })
+}
+
 module.exports = {
     addBus,
     getAllBuses,
@@ -63,5 +68,6 @@ module.exports = {
     balanceUpdate,
     balance,
     editBus,
-    deleteBus
+    deleteBus,
+    search
 }
