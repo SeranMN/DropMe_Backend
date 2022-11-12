@@ -51,7 +51,7 @@ const editBus = async (req, res) => {
 }
 
 const deleteBus = async (req, res) => {
-    await User.findOneAndDelete(req.params.id)
+    await User.findByIdAndDelete(req.params.id)
         .then(() => res.status(200).send('Successfully Deleted'))
         .catch((err) => { res.status(500).send(err) })
 }
