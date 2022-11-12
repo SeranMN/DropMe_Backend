@@ -29,6 +29,7 @@ app.use('/user', User())
 app.use('/trip', Trip())
 app.use('/route', Route())
 app.use('/time', TimeTable())
+app.use('/BusTrip',BusTrip())
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
