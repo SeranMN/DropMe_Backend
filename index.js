@@ -8,6 +8,7 @@ const User = require('./api/User.api')
 const Trip = require('./api/Trip.api')
 const BusTrip = require('./api/BusTrip')
 const Route = require('./api/Route.api')
+const Ticket = require('./api/Ticket.api')
 const connectDB = require("./config/config");
 const app = express();
 
@@ -30,7 +31,7 @@ app.use('/trip', Trip())
 app.use('/route', Route())
 app.use('/time', TimeTable())
 app.use('/BusTrip',BusTrip())
-
+app.use('/ticket', Ticket());
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
