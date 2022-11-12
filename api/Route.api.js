@@ -6,5 +6,7 @@ module.exports = () =>
 {
     router.post("/add",routeController.addRoute);
     router.get('/', routeController.getAllRoutes);
+    router.put('/edit/:id',routeController.editRoute)
+    router.delete('/delete/:id',routeController.deleteRoute)
     return router
 }
