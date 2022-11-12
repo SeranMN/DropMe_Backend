@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
 const busSchema = new mongoose.Schema({
-    BusNo: { type: String, required: true },
+    BusNo: { type: String },
     routeNo: {type:String},
-    BusName: { type: String, required: true },
-    Model: { type: String, required: true },
-    Capacity: { type: String, required: true },
-    Status: { type: String, required: true },
-    Price: { type: String, required: true },
-    Route: { type: String, required: true },
-    Balance:{type: String, required: true}
+    BusName: { type: String },
+    Model: { type: String },
+    Capacity: { type: String },
+    Status: { type: String },
+    Price: { type: String },
+    Route: { type: String },
+    Balance:{type: String}
 });
 module.exports = mongoose.model("Bus",busSchema);
