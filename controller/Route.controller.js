@@ -31,7 +31,7 @@ const editRoute = async (req, res) => {
 }
 
 const deleteRoute = async (req, res) => {
-    await Route.findOneAndDelete(req.params.id)
+    await Route.findByIdAndDelete(req.params.id)
         .then(() => res.status(200).send('Successfully Deleted'))
         .catch((err) => { res.status(500).send(err) })
 }
