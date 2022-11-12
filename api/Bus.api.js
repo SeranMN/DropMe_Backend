@@ -12,5 +12,6 @@ module.exports = () =>
     router.get('/:id',BusController.getAllBusesByNumber)
     router.put('/edit/:id',BusController.editBus)
     router.delete('/delete/:id',BusController.deleteBus)
+    router.get('/search/:id',BusController.search)
     return router
 }

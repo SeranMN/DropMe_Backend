@@ -28,8 +28,14 @@ const getTripByNIC = (req, res) => {
     .catch((err)=> {res.send(err).status(err)})
 }
 
+const search = async (req,res) => {
+    await Trip.find({ 'NIC': { $regex: '.*' + req.params.id + '.*' } }).then((data) => { res.status(200).send(data) })
+    .catch((err) => { res.status(500).send(err) })
+}
+
 module.exports = {
     addTrip,
     getAllTrips,
-    getTripByNIC
+    getTripByNIC,
+    search
 }
